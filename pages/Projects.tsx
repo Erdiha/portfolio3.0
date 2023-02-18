@@ -14,9 +14,13 @@ import { Box, Container, Typography } from '@material-ui/core';
 const Projects = () => {
   console.log(allProj);
   return (
-    <div className='w-full h-full '>
-      <Box className='w-full px-20 py-10 text-center'>
-        <Typography variant='h2'>Projects</Typography>
+    <section id='projects' className='w-full min-h-[100vh] bg-red-50/50 pt-32'>
+      <Box className='w-full text-center flex justify-center '>
+        <Typography
+          className='w-fit uppercase border-b border-gray-500'
+          variant='h3'>
+          Projects
+        </Typography>
       </Box>
 
       <Box
@@ -39,7 +43,7 @@ const Projects = () => {
           );
         })}
       </Box>
-    </div>
+    </section>
   );
 };
 export default Projects;

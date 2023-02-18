@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { skills } from '../utils/data';
 import { useSpring } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
+import { animated } from '@react-spring/web';
 
 function Skills(animatedProps: { animated: boolean }) {
   const { animated } = animatedProps;
@@ -20,25 +21,17 @@ function Skills(animatedProps: { animated: boolean }) {
     });
   }, []);
 
-  // const props: any = useSpring({
-  //   to: {
-  //     opacity: animated ? 1 : 0,
-  //     transform: animated ? 'translateY(0)' : 'translateY(20px)',
-  //   },
-  //   config: { duration: 500 },
-  // });
-
   return (
-    <div className='parallax-container w-full '>
+    <section id='skills' className='parallax-container w-full h-[100vh] '>
       <div className='parallax-image '></div>
-      <div className='parallax-content w-full flex justify-center items-center'>
+      <div className='h-full w-full  '>
         <div
           ref={ref}
-          className=' flex flex-col items-center justify-center backdrop-blur-sm bg-[#7f8080]/30 w-full rounded font-semibold tracking-wide p-4'>
+          className=' flex flex-col items-center justify-center backdrop-blur-sm bg-[#7f8080]/30 h-full  rounded font-semibold tracking-wide'>
           <SkillsTile skills={skills} animated={animated} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -46,9 +39,7 @@ export default Skills;
 
 const SkillsTile = ({ skills, animated }: any) => {
   return (
-    <div
-      id='skills'
-      className='skills bar shadow-gray-700 bg-white/30 rounded-md px-10 shadow-lg grid grid-cols-1 w-full md:w-[60%] py-4  md:p-10 md:m-4'>
+    <div className=' bar shadow-gray-700 bg-white/30 rounded-md px-10 shadow-lg grid grid-cols-1 w-full md:w-[60%] py-8  md:p-10 md:m-4 justify-center '>
       <p className='w-fit pr-2  mb-4 bg-white/50 rounded'>SKILLS</p>
       {animated &&
         skills.map((skill: any) => (

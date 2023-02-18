@@ -79,7 +79,7 @@
     height: 0;
     width: 0;
     border: 5px solid transparent;
-    border-top-color: rgb(217, 55, 82);
+    border-top-color: #d93752;
     border-right-width: 0px;
     border-bottom-width: 0px;
     opacity: 0;
@@ -221,14 +221,14 @@
 
   .parallax-image {
     position: absolute;
-    top: -50rem;
+    top: 0rem;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: url('/skills.jpg');
     background-size: cover;
     background-position: center;
-    transform: translateZ(0);
+    transform: translateZ(50%);
   }
   .flip-card {
     perspective: 1000px;
