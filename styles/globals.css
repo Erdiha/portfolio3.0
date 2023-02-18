@@ -32,6 +32,82 @@
     -webkit-backdrop: blur(10px);
   }
 
+  .info span {
+    font-size: medium;
+    font-weight: 500;
+    opacity: 0;
+    animation: showtxt 0.5s 1s linear forwards;
+  }
+  @keyframes showtxt1 {
+    100% {
+      opacity: 1;
+    }
+  }
+  .progress-line {
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
+      1px 1px rgba(79, 171, 199, 0.9);
+    position: relative;
+    height: 10px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: #f0f0f0;
+    animation: progressAnimate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    border-radius: 1px;
+    transform-origin: left;
+  }
+  @keyframes progressAnimate {
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  .progress-line span {
+    border-radius: 1px;
+    height: 100%;
+    background-color: rgb(79, 171, 199);
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: progressAnimate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  }
+
+  .progress-line span::before {
+    content: '';
+    position: absolute;
+    color: #fff;
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top-color: rgb(217, 55, 82);
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    opacity: 0;
+    animation: showtxt 0.5s 1s linear forwards;
+  }
+  .progress-line span::after {
+    position: absolute;
+    color: #fff;
+    top: -33px;
+    right: 0;
+    border: 5px soild transparent;
+    background-color: rgb(217, 55, 82);
+    padding: 1px 8px;
+    border-radius: 3px;
+    height: 25px;
+    font-size: small;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    animation: showtxt 0.5s 1s linear forwards;
+  }
+
+  @keyframes showtxt {
+    100% {
+      opacity: 1;
+    }
+  }
   .bg-with-bg-image::before {
     content: '';
     position: absolute;
@@ -39,6 +115,10 @@
     background-image: url('/hero-bg.jpg');
     background-size: cover;
     background-position: center;
+  }
+
+  .progress-line-animation {
+    animation: progressAnimate 1s cubic-bezier(1, 0, 0, 0.5, 1);
   }
 
   .animate-slide-in-1 {
@@ -136,7 +216,6 @@
 
   .parallax-container {
     position: relative;
-    height: 500px;
     overflow: hidden;
   }
 
@@ -150,5 +229,34 @@
     background-size: cover;
     background-position: center;
     transform: translateZ(0);
+  }
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    /* box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2); */
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
   }
 }

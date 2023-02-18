@@ -10,8 +10,7 @@ import Icon from './Icon';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState('#ecf0f9');
-  const [linkColor, setLinkColor] = useState('#1f2937');
+  const [navBg, setNavBg] = useState('#000');
 
   const handleNav = () => {
     setNav(!nav);
@@ -30,18 +29,17 @@ const Navbar = () => {
 
   return (
     <div
-      style={{ backgroundColor: `${navBg}` }}
-      className={
+      className={` ${
         shadow
-          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
-          : 'fixed w-full h-20 z-[100] '
-      }>
-      <div className='flex justify-between md:max-w-[90rem] md:mx-auto items-center w-full h-full px-8 md:px-32 2xl:px-16'>
+          ? 'fixed w-full h-20 shadow-xl z-[100]  backdrop-blur bg-white/30  ease-in-out duration-300 text-black font-semibold'
+          : 'fixed w-full h-20 z-[100] ease-in-out duration-300 bg-slate-900 text-white'
+      }`}>
+      <div className='flex justify-between md:max-w-[90rem] md:mx-auto items-center w-full h-full px-8 md:px-32 2xl:px-16 '>
         <Link href='/'>
           <Icon />
         </Link>
         <div>
-          <ul style={{ color: `${linkColor}` }} className='hidden md:flex'>
+          <ul className='hidden md:flex'>
             <li className='ml-10 text-sm uppercase hover:border-b'>
               <Link href='/'>Home</Link>
             </li>
@@ -62,10 +60,7 @@ const Navbar = () => {
             </li>
           </ul>
           {/* Hamburger Icon */}
-          <div
-            style={{ color: `${linkColor}` }}
-            onClick={handleNav}
-            className='md:hidden'>
+          <div onClick={handleNav} className='md:hidden'>
             <AiOutlineMenu size={25} />
           </div>
         </div>

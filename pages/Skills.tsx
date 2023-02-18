@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import ProgressBar from '@ramonak/react-progress-bar';
-import Icon from '../components/Icon';
-import {
-  DiReact,
-  DiJavascript1,
-  DiHtml5,
-  DiCss3,
-  DiNodejsSmall,
-} from 'react-icons/di';
-function Skills() {
+import { skills } from '../utils/data';
+import { useSpring } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
+
+function Skills(animatedProps: { animated: boolean }) {
+  const { animated } = animatedProps;
+  //usingreact observer api
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+  });
+
+  // create parallax effect on skills sectiob
   useEffect(() => {
     window.addEventListener('scroll', function () {
       const parallax = document.querySelector('.parallax-image') as HTMLElement;
@@ -17,37 +20,22 @@ function Skills() {
     });
   }, []);
 
-  const skills = [
-    { name: 'React', percentage: 90, color: 'red', icon: <DiReact /> },
-    { name: 'Next.js', percentage: 90, color: 'blue', icon: <DiReact /> },
-    {
-      name: 'Tailwind CSS',
-      percentage: 90,
-      color: 'orange',
-      Icon: <DiReact />,
-    },
-    { name: 'TypeScript', percentage: 90, color: 'teal', icon: <DiReact /> },
-    {
-      name: 'JavaScript',
-      percentage: 80,
-      color: 'black',
-      icon: <DiJavascript1 />,
-    },
-    { name: 'HTML', percentage: 90, color: 'purple', icon: <DiHtml5 /> },
-    { name: 'CSS', percentage: 80, color: 'gray', icon: <DiCss3 /> },
-    {
-      name: 'Node.js',
-      percentage: 70,
-      color: 'green',
-      icon: <DiNodejsSmall />,
-    },
-  ];
+  // const props: any = useSpring({
+  //   to: {
+  //     opacity: animated ? 1 : 0,
+  //     transform: animated ? 'translateY(0)' : 'translateY(20px)',
+  //   },
+  //   config: { duration: 500 },
+  // });
+
   return (
     <div className='parallax-container w-full '>
       <div className='parallax-image '></div>
-      <div className='parallax-content w-full h-full flex justify-center items-center'>
-        <div className=' flex flex-col items-center justify-center backdrop-blur-sm bg-[#7f8080]/30 w-full p-20 rounded font-semibold tracking-wide'>
-          <SkillsTile skills={skills} />
+      <div className='parallax-content w-full flex justify-center items-center'>
+        <div
+          ref={ref}
+          className=' flex flex-col items-center justify-center backdrop-blur-sm bg-[#7f8080]/30 w-full rounded font-semibold tracking-wide p-4'>
+          <SkillsTile skills={skills} animated={animated} />
         </div>
       </div>
     </div>
@@ -56,37 +44,28 @@ function Skills() {
 
 export default Skills;
 
-interface ISkills {
-  name: string;
-  percentage: number;
-  color: string;
-}
-
-const SkillsTile = ({ skills }: any) => {
+const SkillsTile = ({ skills, animated }: any) => {
   return (
-    <div className='container mx-auto'>
-      <h2 className='text-2xl font-bold  text-start'>My Skills</h2>
-      <div className='grid grid-cols-1 md:grid-cols- lg:grid-cols-4 gap-4'>
-        {skills.map((skill: any) => (
-          <div
-            key={skill.name}
-            className='bg-white/50 p-8  shadow-md text-center'>
-            <div className='mb-4 text-center w-full flex text-2xl'>
-              {skill.icon}
+    <div
+      id='skills'
+      className='skills bar shadow-gray-700 bg-white/30 rounded-md px-10 shadow-lg grid grid-cols-1 w-full md:w-[60%] py-4  md:p-10 md:m-4'>
+      <p className='w-fit pr-2  mb-4 bg-white/50 rounded'>SKILLS</p>
+      {animated &&
+        skills.map((skill: any) => (
+          <div key={skill.icon.toString()} className='bar md:mx-10 my-3'>
+            <div className='info mt-0'>
+              <span className='text-2xl flex gap-2 '>
+                {skill.name} {skill.icon}
+              </span>
             </div>
-            <h3 className='text-lg font-bold mb-2'>{skill.name}</h3>
-            <div className='mb-4'>
-              <ProgressBar
-                completed={skill.percentage}
-                bgColor={skill.color}
-                labelAlignment='center'
-                height='20px'
-              />
+            <div className='progress-line'>
+              <span
+                className='after:content-[attr(data-content)]'
+                style={{ width: `${skill.percentage}%` }}
+                data-content={`${skill.percentage}%`}></span>
             </div>
-            <p className='text-gray-500 text-sm'>{''}</p>
           </div>
         ))}
-      </div>
     </div>
   );
 };
