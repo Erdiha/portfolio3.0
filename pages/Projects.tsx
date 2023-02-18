@@ -8,28 +8,25 @@ import {
   techUsed,
   allProj,
 } from '../utils/data';
-
-import { Box, Container, Typography } from '@material-ui/core';
+import { Typography } from '@material-tailwind/react';
 
 const Projects = () => {
   console.log(allProj);
   return (
     <section id='projects' className='w-full min-h-[100vh] bg-red-50/50 pt-32'>
-      <Box className='w-full text-center flex justify-center '>
+      <div className='w-full text-center flex justify-center '>
         <Typography
           className='w-fit uppercase border-b border-gray-500'
           variant='h3'>
           Projects
         </Typography>
-      </Box>
+      </div>
 
-      <Box
-        className='flex bg-brown-300   justify-center items-center gap-10 flex-wrap p-10 gap-y-20'
-        maxWidth='xxl'>
+      <div className='flex bg-brown-300   justify-center items-center gap-10 flex-wrap p-10 gap-y-20'>
         {' '}
         {allProj.map((project: any, index: number) => {
           return (
-            <Box>
+            <div>
               <ProjectTile
                 key={project.id}
                 title={project.title}
@@ -39,10 +36,10 @@ const Projects = () => {
                 link={project.link}
                 code={project.code}
               />
-            </Box>
+            </div>
           );
         })}
-      </Box>
+      </div>
     </section>
   );
 };

@@ -7,6 +7,7 @@ import Projects from './Projects';
 import { useEffect, useState } from 'react';
 import { skills } from '../utils/data';
 import { useInView } from 'react-intersection-observer';
+import Contact from './Contact';
 
 const Home: NextPage = () => {
   const [animated, setAnimated] = useState(false);
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
       <Hero />
       <Skills animated={animated} />
       <Projects />
+      <Contact />
     </div>
   );
 };

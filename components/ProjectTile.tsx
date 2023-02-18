@@ -1,4 +1,4 @@
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-tailwind/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -23,18 +23,28 @@ const Card = ({
             <img src={imageUrl} alt='image myflix' />
           </div>
         </div>
-        <div className='flip-card-back text-lg  p-10 grid bg-gray-100 tracking-wide leading-loose items-center'>
+        <div className='flip-card-back text-md md:text:lg  p-10 grid bg-gray-100 tracking-wide leading-loose items-center'>
           <Typography variant='h3'>{title}</Typography>
 
           <p>{description}</p>
 
           <a href={code}>
-            <Button variant='outlined' className=' shadow-sm bg-slate-700'>
+            <Button
+              variant='gradient'
+              className=' text-gray-700 shadow-sm bg-slate-200 px-2 font-light'
+              nonce={undefined}
+              onResize={undefined}
+              onResizeCapture={undefined}>
               GitHub Repo
             </Button>
           </a>
           <a target='_blank' referrerPolicy='no-referrer' href={link}>
-            <Button variant='outlined' className=' shadow-sm bg-slate-700'>
+            <Button
+              variant='gradient'
+              className=' text-gray-700 shadow-sm bg-slate-200 px-2 font-light'
+              nonce={undefined}
+              onResize={undefined}
+              onResizeCapture={undefined}>
               {' '}
               See The Project
             </Button>

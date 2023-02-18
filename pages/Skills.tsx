@@ -39,11 +39,11 @@ export default Skills;
 
 const SkillsTile = ({ skills, animated }: any) => {
   return (
-    <div className=' bar shadow-gray-700 bg-white/30 rounded-md px-10 shadow-lg grid grid-cols-1 w-full md:w-[60%] py-8  md:p-10 md:m-4 justify-center '>
-      <p className='w-fit pr-2  mb-4 bg-white/50 rounded'>SKILLS</p>
+    <div className=' bar shadow-gray-700 bg-white/30 rounded-md px-10 h-full grid grid-cols-1 w-full md:w-[60%]  md:pt-32   md:m-4 justify-center py-32'>
+      <p className='w-fit pr-2 h-fit bg-white/50 rounded'>SKILLS</p>
       {animated &&
         skills.map((skill: any) => (
-          <div key={skill.icon.toString()} className='bar md:mx-10 my-3'>
+          <div key={skill.icon.toString()} className='bar md:mx-10'>
             <div className='info mt-0'>
               <span className='text-2xl flex gap-2 '>
                 {skill.name} {skill.icon}
