@@ -8,7 +8,9 @@ import { useEffect, useState } from 'react';
 import { skills } from '../utils/data';
 import { useInView } from 'react-intersection-observer';
 import Contact from './Contact';
-
+import Resume from './Resume';
+import { Button } from '@material-tailwind/react';
+import { RxDoubleArrowUp } from 'react-icons/rx';
 const Home: NextPage = () => {
   const [animated, setAnimated] = useState(false);
 
@@ -16,6 +18,13 @@ const Home: NextPage = () => {
     /* Optional options */
     threshold: 0,
   });
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,7 +46,16 @@ const Home: NextPage = () => {
       <Hero />
       <Skills animated={animated} />
       <Projects />
+      <Resume />
       <Contact />
+      <Button
+        onClick={handleClick}
+        className='p-4 aspect-square md:hover:scale-105  text-gray-900 rounded-full text-2xl mb-8 justify-center items-center flex shadow-lg bg-slate-200'
+        nonce={undefined}
+        onResize={undefined}
+        onResizeCapture={undefined}>
+        <RxDoubleArrowUp size={30} />
+      </Button>
     </div>
   );
 };

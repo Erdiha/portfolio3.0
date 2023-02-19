@@ -27,7 +27,7 @@ function Skills(animatedProps: { animated: boolean }) {
       <div className='h-full w-full  '>
         <div
           ref={ref}
-          className=' flex flex-col items-center justify-center backdrop-blur-sm bg-[#7f8080]/30 h-full  rounded font-semibold tracking-wide'>
+          className=' flex flex-col items-center justify-center   h-full  rounded font-semibold tracking-wide'>
           <SkillsTile skills={skills} animated={animated} />
         </div>
       </div>
@@ -39,7 +39,7 @@ export default Skills;
 
 const SkillsTile = ({ skills, animated }: any) => {
   return (
-    <div className=' bar shadow-gray-700 bg-white/30 rounded-md px-10 h-full grid grid-cols-1 w-full md:w-[60%]  md:pt-32   md:m-4 justify-center py-32'>
+    <div className=' bar shadow-gray-700  backdrop-blur-xl bg-white/40 rounded-md px-10 h-full grid grid-cols-1 w-full md:w-[60%]  md:pt-32   md:m-4 justify-center py-32'>
       <p className='w-fit pr-2 h-fit bg-white/50 rounded'>SKILLS</p>
       {animated &&
         skills.map((skill: any) => (

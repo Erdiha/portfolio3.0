@@ -11,6 +11,10 @@
     margin: 0;
     padding: 0%;
   }
+  html {
+    @apply scroll-smooth;
+    scroll-behavior: smooth;
+  }
   @font-face {
     font-family: 'MyFirstFont';
     src: url('/fonts/MyFirstFont.ttf') format('truetype');
@@ -43,6 +47,10 @@
       opacity: 1;
     }
   }
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    transition: transform 0.2s ease-out;
+  }
   .progress-line {
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
       1px 1px rgba(79, 171, 199, 0.9);
@@ -63,7 +71,7 @@
   .progress-line span {
     border-radius: 1px;
     height: 100%;
-    background-color: rgb(79, 171, 199);
+    background-color: rgb(38, 119, 143);
     position: absolute;
     transform: scaleX(0);
     transform-origin: left;
@@ -221,11 +229,11 @@
 
   .parallax-image {
     position: absolute;
-    top: 0rem;
+    top: -50rem;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/skills.jpg');
+    background-image: url('/baloons.jpg');
     background-size: cover;
     background-position: center;
     transform: translateZ(50%);
