@@ -40,7 +40,7 @@ const Navbar = () => {
           }
         },
         {
-          rootMargin: '-50% 0px -50% 0px',
+          rootMargin: '50% 0px -50% 0px',
         },
       );
       observer.observe(section);

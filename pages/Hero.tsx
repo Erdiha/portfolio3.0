@@ -8,7 +8,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className={`hero ${loaded ? 'hero-loaded' : ''}`}>
+    <section id='home' className={`hero ${loaded ? 'hero-loaded' : ''}`}>
       <div className='hero-inner'>
         <div className='flex justify-center items-center h-full'>
           <div className='flex flex-col max-w-7xl pt-20 h-[50%] md:p-40 md:m-auto'>
