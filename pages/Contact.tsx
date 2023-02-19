@@ -24,19 +24,19 @@ function contact() {
   };
 
   return (
-    <section id='contact'>
+    <section id='contact' className='h-screen'>
       <div
         className='flex flex-col items-center justify-center w-full p-2 text-gray-800
         transition-all duration-300 ease-in-out  transform h-[100vh]
       md:mx-auto pt-10 scroll-mt-[5rem] '>
-        <section className='w-full md:w-[30rem] lg:w-[40rem] shadow-lg p-5  bg-custom-gray'>
+        <div className='w-full md:w-[30rem] lg:w-[40rem] shadow-lg p-5  bg-custom-gray'>
           <div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
             {sent ? (
-              <section className='w-full h-full p-4 grid grid-rows-2 items-center justify-center'>
+              <div className='w-full h-full p-4 grid grid-rows-2 items-center justify-center'>
                 <h1 className='md:text-4xl text-3xl py-2 mb-4'>THANK YOU</h1>
                 <h2 className='text-center text-lg'>We received your email.</h2>
                 <h3 className='text-center text-xl'>Have A Great Day!</h3>
-              </section>
+              </div>
             ) : (
               <>
                 {' '}
@@ -119,7 +119,7 @@ function contact() {
               </>
             )}
           </div>
-        </section>
+        </div>
       </div>
     </section>
   );

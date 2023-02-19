@@ -118,10 +118,10 @@ export const projectsCode = [
   'https://github.com/cs130-w22/Group-A1',
 ];
 const images = [
-  'recipe.jpg',
-  'myflix.jpg',
-  'parks.jpg',
-  'quiz.jpg',
+  'food.jpg',
+  'movies.jpg',
+  'camping.jpg',
+  'trivia.jpg',
   'schedule.jpg',
 ];
 

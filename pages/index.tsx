@@ -41,7 +41,10 @@ const Home: NextPage = () => {
     <div className='flex min-h-screen flex-col items-center justify-center'>
       <Head>
         <title>EHACI</title>
-        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content='web developer/engineer who loves developing unique responsive websites with beautiful ui.'
+        />
       </Head>
       <Hero />
       <Skills animated={animated} />

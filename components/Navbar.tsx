@@ -40,7 +40,9 @@ const Navbar = () => {
           }
         },
         {
-          rootMargin: '50% 0px -50% 0px',
+          root: null,
+          rootMargin: '-50% 0px -50% 0px',
+          threshold: 1,
         },
       );
       observer.observe(section);
@@ -59,11 +61,12 @@ const Navbar = () => {
       });
     };
   }, []);
+
   const navitems = () => {
     const items = ['home', 'skills', 'projects', 'resume', 'contact'];
-    const navItems = items.map((item) => (
+    const navItems = items.map((item, index) => (
       <li
-        key={item}
+        key={index}
         onClick={() => setCurrentNav(item)}
         className={`ml-10 text-sm uppercase hover:border-b-2 ${
           item === 'home'

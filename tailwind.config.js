@@ -7,8 +7,17 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
   ],
+  variants: {
+    extend: {
+      display: ['group-hover', 'project-tile-hover'],
+    },
+  },
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        betterhover: { raw: '(hover: hover)' },
+      },
+    },
   },
   plugins: [],
 };
