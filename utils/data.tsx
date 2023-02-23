@@ -4,6 +4,7 @@ import {
   DiHtml5,
   DiCss3,
   DiNodejsSmall,
+  DiPython,
 } from 'react-icons/di';
 
 export interface ICard {
@@ -15,7 +16,7 @@ export interface ICard {
   image: string;
 }
 
-import { TbBrandNextjs, TbBrandTailwind } from 'react-icons/tb';
+import { TbBrandNextjs, TbBrandTailwind, TbBrandPython } from 'react-icons/tb';
 import { SiTypescript, SiCplusplus, SiCsharp } from 'react-icons/si';
 
 const MyObject = {
@@ -74,9 +75,15 @@ export const skills = [
   },
   {
     name: 'Node.js',
-    percentage: 78,
+    percentage: 72,
     color: 'green',
     icon: <DiNodejsSmall size={`${sizeNum}`} />,
+  },
+  {
+    name: 'Python',
+    percentage: 75,
+    color: 'green',
+    icon: <TbBrandPython size={`${sizeNum} `} />,
   },
   MyObject,
 ];

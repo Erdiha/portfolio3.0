@@ -62,20 +62,26 @@ const Navbar = () => {
     };
   }, []);
 
-  const navitems = () => {
+  const navitems = (): JSX.Element[] => {
     const items = ['home', 'skills', 'projects', 'resume', 'contact'];
     const navItems = items.map((item, index) => (
       <li
         key={index}
         onClick={() => setCurrentNav(item)}
-        className={`ml-10 text-sm uppercase hover:border-b-2 ${
-          item === 'home'
-            ? `border-gray-200 ${!currentNav && 'border-2 p-1 border-gray-100'}`
-            : `border-gray-800 ${
-                currentNav === item ? 'border-2 p-1 border-gray-800' : ''
+        className={` text-sm uppercase w-full  flex justify-center items-center 
+        `}>
+        <Link
+          className={` text-sm uppercase hover:border-b-2   flex justify-center items-center 
+        ${
+          item === 'home' && !shadow
+            ? `border-gray-200  border-b-2 p-1 `
+            : `border-gray-800   ${
+                currentNav === item ? 'border-b-2 p-1 border-gray-800' : ''
               }`
-        }`}>
-        <Link href={`${item === 'home' ? '/' : '#' + item}`}>{item}</Link>
+        }`}
+          href={`${item === 'home' ? '/' : '#' + item}`}>
+          {item}
+        </Link>
       </li>
     ));
     return navItems;
@@ -89,14 +95,18 @@ const Navbar = () => {
           ? 'fixed w-full h-20 shadow-xl z-[100]  backdrop-blur bg-white/30  ease-in-out duration-300 text-black font-semibold'
           : 'fixed w-full h-20 z-[100] ease-in-out duration-300 bg-slate-900 text-white'
       }`}>
-      <div className='flex justify-between md:max-w-[90rem] md:mx-auto items-center w-full h-full px-8 md:px-32 2xl:px-16 '>
+      <div className='flex justify-between md:max-w-[90rem] gap-10 md:mx-auto items-center w-full h-full px-8  '>
         <Link href='/'>
           <Icon />
         </Link>
-        <div>
-          <ul className='hidden md:flex'>{navitems()}</ul>
+        <div className='w-full h-full flex justify-end'>
+          <ul className='hidden md:grid grid-cols-5 items-center  justify-center w-[50%] h-full'>
+            {navitems()}
+          </ul>
           {/* Hamburger Icon */}
-          <div onClick={handleNav} className='md:hidden'>
+          <div
+            onClick={handleNav}
+            className='md:hidden flex items-center justify-center'>
             <AiOutlineMenu size={25} />
           </div>
         </div>
@@ -133,7 +143,7 @@ const Navbar = () => {
               <i className='w-[85%] md:w-[90%] '>A Passion For Developing.</i>
             </div>
           </div>
-          <div className='py-4 flex flex-col'>
+          <div className='py-4 flex flex-col '>
             <ul className='uppercase'>
               <Link href='/'>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
@@ -166,7 +176,7 @@ const Navbar = () => {
               <p className='uppercase tracking-widest text-[#8e8e92]'>
                 CONNECT WITH ME
               </p>
-              <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
+              <div className='flex items-center justify-between my-4 w-full sm:w-[80%] '>
                 <a
                   href='https://www.linkedin.com/in/erdi-haciogullari-919246222/'
                   target='_blank'
