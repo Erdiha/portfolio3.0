@@ -282,6 +282,13 @@
     -moz-transform: rotateY(180deg);
   }
 
+  .flip-card-back .btn-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   /* Disable hover effects on mobile */
   @media (max-width: 767px) {
     .flip-card:hover .flip-card-inner {

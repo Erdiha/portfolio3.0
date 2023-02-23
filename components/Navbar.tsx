@@ -139,11 +139,11 @@ const Navbar = () => {
                 />
               </div>
             </div>
-            <div className='border-b border-gray-300 my-8'>
+            <div className='border-b border-gray-300 my-8 text-neutral-500'>
               <i className='w-[85%] md:w-[90%] '>A Passion For Developing.</i>
             </div>
           </div>
-          <div className='py-4 flex flex-col '>
+          <div className='py-4 flex flex-col text-neutral-500'>
             <ul className='uppercase'>
               <Link href='/'>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
