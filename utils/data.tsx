@@ -89,6 +89,7 @@ export const skills = [
 ];
 
 export const projectNames = [
+  'LiftBudz',
   'Thoodies',
   'MyFlix',
   'MyCamper',
@@ -96,6 +97,7 @@ export const projectNames = [
   'Cya App',
 ];
 export const projectLinks = [
+  'https://lift-budz.vercel.app/',
   'http://thoodies.com/',
   'https://myflix-eight.vercel.app/',
   'https://main--effortless-kangaroo-bb5cd4.netlify.app/',
@@ -103,6 +105,7 @@ export const projectLinks = [
   'https://cya-client-cs130.herokuapp.com/login',
 ];
 export const projectDescriptions = [
+  'LiftBudz is a fitness social web app that I created using tailwind, NextJS, React, TS, and Firebase',
   'Thoodies is a recipe website I created using NextJS, Tailwind, Typescript, and Firebase',
   'MyFlix is a Netflix mockup website I created using tailwind, NextJS, React, TS, and Firebase',
   'MyCamper is an individualized park finder allowing users to search for and bookmark any national park in the US.',
@@ -118,6 +121,7 @@ export const techUsed = [
 ];
 
 export const projectsCode = [
+  'https://github.com/Erdiha/LiftBudz',
   'https://github.com/Erdiha/Thoodies',
   'https://github.com/Erdiha/myFLIX',
   'https://github.com/Erdiha/Camper',
@@ -125,6 +129,7 @@ export const projectsCode = [
   'https://github.com/cs130-w22/Group-A1',
 ];
 const images = [
+  'liftbudz.jpg',
   'food.jpg',
   'movies.jpg',
   'camping.jpg',
@@ -133,7 +138,7 @@ const images = [
 ];
 
 export const allProj: any = [];
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 6; i++) {
   const temp: ICard = {
     id: i,
     title: projectNames[i],
