@@ -1,11 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Hero from './Hero';
 import Skills from './Skills';
 import Projects from './Projects';
 import { useEffect, useState } from 'react';
-import { skills } from '../utils/data';
 import { useInView } from 'react-intersection-observer';
 import Contact from './Contact';
 import Resume from './Resume';

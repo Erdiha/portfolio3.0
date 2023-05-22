@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Input } from '@material-tailwind/react';
 
 function contact() {
   const [sent, setSent]: any = useState(false);

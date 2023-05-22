@@ -16,7 +16,12 @@ export interface ICard {
   image: string;
 }
 
-import { TbBrandNextjs, TbBrandTailwind, TbBrandPython } from 'react-icons/tb';
+import {
+  TbBrandNextjs,
+  TbBrandTailwind,
+  TbBrandPython,
+  TbBrandReactNative,
+} from 'react-icons/tb';
 import { SiTypescript, SiCplusplus, SiCsharp } from 'react-icons/si';
 
 const MyObject = {
@@ -86,9 +91,16 @@ export const skills = [
     icon: <TbBrandPython size={`${sizeNum} `} />,
   },
   MyObject,
+  {
+    name: 'React Native',
+    percentage: 70,
+    color: 'green',
+    icon: <TbBrandReactNative size={`${sizeNum} `} />,
+  },
 ];
 
 export const projectNames = [
+  'LetterBee - An Android App',
   'LiftBudz',
   'Thoodies',
   'MyFlix',
@@ -97,6 +109,7 @@ export const projectNames = [
   'Cya App',
 ];
 export const projectLinks = [
+  'https://www.youtube.com/watch?v=U_5BrEn1fzg',
   'https://lift-budz.vercel.app/',
   'http://thoodies.com/',
   'https://myflix-eight.vercel.app/',
@@ -104,13 +117,14 @@ export const projectLinks = [
   'https://main.d2en2iuoalsx7.amplifyapp.com/',
   'https://cya-client-cs130.herokuapp.com/login',
 ];
-export const projectDescriptions = [
-  'LiftBudz is a fitness social web app that I created using tailwind, NextJS, React, TS, and Firebase',
-  'Thoodies is a recipe website I created using NextJS, Tailwind, Typescript, and Firebase',
-  'MyFlix is a Netflix mockup website I created using tailwind, NextJS, React, TS, and Firebase',
-  'MyCamper is an individualized park finder allowing users to search for and bookmark any national park in the US.',
-  'Quiz Game is a fun little side project, which can be played with one or two people.',
-  'Cya App is a scheduling app I created along with four of my classmates as our final project at UCLA.',
+const projectDescriptions = [
+  'LetterBee: Exercise your vocabulary and analytical thinking skills with this striking Android app, published on the Google App Store.',
+  'LiftBudz: A clever fitness social web app created using Tailwind, NextJS, React, TS, and Firebase.',
+  'Thoodies: Discover culinary delights on this pro recipe website built with NextJS, Tailwind, TypeScript, and Firebase.',
+  'MyFlix: Immerse yourself in a cleverly designed Netflix mockup website powered by Tailwind, NextJS, React, TS, and Firebase.',
+  'MyCamper: Explore and bookmark US national parks effortlessly with this ingenious individualized park finder.',
+  'Quiz Game: Engage in a fun and interactive side project, perfect for one or two players.',
+  'Cya App: Experience seamless scheduling with this professional app, created by a team of talented classmates for our final project at UCLA.',
 ];
 
 export const techUsed = [
@@ -121,6 +135,7 @@ export const techUsed = [
 ];
 
 export const projectsCode = [
+  'https://github.com/Erdiha/LetterBee',
   'https://github.com/Erdiha/LiftBudz',
   'https://github.com/Erdiha/Thoodies',
   'https://github.com/Erdiha/myFLIX',
@@ -129,6 +144,7 @@ export const projectsCode = [
   'https://github.com/cs130-w22/Group-A1',
 ];
 const images = [
+  'lb1.jpg',
   'liftbudz.jpg',
   'food.jpg',
   'movies.jpg',
@@ -138,7 +154,7 @@ const images = [
 ];
 
 export const allProj: any = [];
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < projectsCode.length; i++) {
   const temp: ICard = {
     id: i,
     title: projectNames[i],

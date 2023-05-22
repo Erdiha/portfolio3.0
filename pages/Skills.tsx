@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { skills } from '../utils/data';
-import { useSpring } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
-import { animated } from '@react-spring/web';
 
 function Skills(animatedProps: { animated: boolean }) {
   const { animated } = animatedProps;
