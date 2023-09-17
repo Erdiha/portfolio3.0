@@ -18,7 +18,7 @@ const Card = ({ link, code, title, description, imageUrl }: any) => {
                 src={imageUrl}
                 alt={title}
                fill
-                style={{ objectFit: 'contain',justifyContent:'center',alignItems:'center', padding:title==='Glazed & Confused'?'2rem ':'0px' }}
+                style={{ objectFit: 'contain',justifyContent:'center',alignItems:'center', padding:title==='Glazed & Confused'?'2rem ':'' }}
               />
             </div>
           </div>
