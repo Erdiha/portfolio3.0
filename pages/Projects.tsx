@@ -2,6 +2,8 @@ import { Typography } from '@material-tailwind/react';
 import Image from 'next/image';
 import ProjectTile from '../components/ProjectTile';
 import { allProj } from '../utils/data';
+
+
 const Projects = () => {
   return (
     <section id='projects' className='w-full min-h-screen bg-gray-50'>

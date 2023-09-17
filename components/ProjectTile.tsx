@@ -1,7 +1,9 @@
 import { Button } from '@material-tailwind/react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Card = ({ link, code, title, description, imageUrl }: any) => {
+ 
   return (
     <div className='flex flex-col justify-center  md:m-8 md:my-16 my-8 '>
       <div className=' group md:h-[30rem] md:w-[40rem] [perspective:1000px] w-96 h-[20rem] border'>
@@ -11,16 +13,14 @@ const Card = ({ link, code, title, description, imageUrl }: any) => {
               {title}
             </h1>
 
-            <div className='border flex border-white absolute -bottom-10 mx-4 rounded p-[2px] bg-gray-800'>
-              <img
+            <div className={`border flex  w-full h-full border-white absolute  rounded p-[2px] justify-center items-center ${title==='Glazed & Confused'? 'bg-pink-400 pt-2 mt-6':''}`}>
+              <Image
                 src={imageUrl}
                 alt={title}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  objectPosition: 'center',
-                }}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
+                style={{ objectFit: 'contain',justifyContent:'center',alignItems:'center',padding:title==='Glazed & Confused'?'5rem':'0px' }}
               />
             </div>
           </div>

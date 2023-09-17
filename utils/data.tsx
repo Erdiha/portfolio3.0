@@ -100,6 +100,7 @@ export const skills = [
 ];
 
 export const projectNames = [
+  'Glazed & Confused',
   'LetterBee - An Android App',
   'LiftBudz',
   'Thoodies',
@@ -109,6 +110,7 @@ export const projectNames = [
   'Cya App',
 ];
 export const projectLinks = [
+  'https://minidonutsla.com',
   'https://www.youtube.com/watch?v=U_5BrEn1fzg',
   'https://lift-budz.vercel.app/',
   'http://thoodies.com/',
@@ -118,6 +120,7 @@ export const projectLinks = [
   'https://cya-client-cs130.herokuapp.com/login',
 ];
 const projectDescriptions = [
+  "Glazed & Confused: A testament to my freelance skills, a professional website project showcasing my full-stack development expertise in my portfolio.",
   'LetterBee: Exercise your vocabulary and analytical thinking skills with this striking Android app, published on the Google App Store.',
   'LiftBudz: A clever fitness social web app created using Tailwind, NextJS, React, TS, and Firebase.',
   'Thoodies: Discover culinary delights on this pro recipe website built with NextJS, Tailwind, TypeScript, and Firebase.',
@@ -135,6 +138,7 @@ export const techUsed = [
 ];
 
 export const projectsCode = [
+  'https://github.com/Erdiha/GlazedANDConfused',
   'https://github.com/Erdiha/LetterBee',
   'https://github.com/Erdiha/LiftBudz',
   'https://github.com/Erdiha/Thoodies',
@@ -144,6 +148,7 @@ export const projectsCode = [
   'https://github.com/cs130-w22/Group-A1',
 ];
 const images = [
+  'homerdonut.png',
   'lb1.jpg',
   'liftbudz.jpg',
   'food.jpg',
@@ -161,7 +166,7 @@ for (let i = 0; i < projectsCode.length; i++) {
     description: projectDescriptions[i],
     link: projectLinks[i],
     code: projectsCode[i],
-    image: images[i],
+    image: '/'+images[i],
   };
   allProj.push(temp);
 }

@@ -40,8 +40,8 @@ const SkillsTile = ({ skills, animated }: any) => {
     <div className=' bar shadow-gray-700  backdrop-blur-xl bg-white/40 rounded-md px-10 h-full grid grid-cols-1 w-full md:w-[60%]  md:pt-32   md:m-4 justify-center py-32'>
       <p className='w-fit pr-2 h-fit bg-white/50 rounded'>SKILLS</p>
       {animated &&
-        skills.map((skill: any) => (
-          <div key={skill.icon.toString()} className='bar md:mx-10'>
+        skills.map((skill: any,index:number) => (
+          <div  key={skill.icon.toString() +index} className='bar md:mx-10'>
             <div className='info mt-0'>
               <span className='text-2xl flex gap-2 '>
                 {skill.name} {skill.icon}

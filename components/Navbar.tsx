@@ -86,7 +86,7 @@ const Navbar = () => {
     return navItems;
   };
 
-  console.log(currentNav);
+  
   return (
     <div
       className={` ${
