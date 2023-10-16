@@ -15,11 +15,11 @@ const Card = ({
   return (
     <div className="card ">
       <div
-        style={{ boxShadow: `10px 35px 30px -15px ${shadowColor}` }}
+        style={{ boxShadow: `0px 35px 30px -15px ${shadowColor}` }}
         className="wrapper"
       >
         <img src={imageUrl} className="cover-image" />
-        <p className="text-center  flex  absolute -top-10  p-2 font-bold font-sans  tracking-wider md:z-0 z-50">
+        <p className="text-center  flex  absolute -top-10  py-2 font-bold font-sans  tracking-wider md:z-0 z-50 ">
           {title}
         </p>
       </div>
