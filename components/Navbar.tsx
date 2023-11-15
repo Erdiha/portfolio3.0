@@ -101,7 +101,7 @@ const Navbar = () => {
           <Icon />
         </Link>
         <div className="w-full h-full flex justify-end">
-          <ul className="hidden md:grid grid-cols-5 items-center  justify-center w-[50%] h-full">
+          <ul className="hidden md:grid grid-cols-5 items-center  justify-center md:w-[80%] 2xl:w-[70%]  h-full">
             {navitems()}
           </ul>
           {/* Hamburger Icon */}
