@@ -175,17 +175,22 @@ for (let i = 0; i < projectsCode.length; i++) {
 
 export const experinceObject = [
   {
-    title: "React Frontend Developer Intern at GBCS Group",
+    title: "React Frontend Developer",
+    company: "GBCS GRoup",
+    type: "Internship",
+    icon: "/internship.png",
     date: { start: "July 2023", end: "Present" },
     description: [
-      "Lead and manage multiple front-end development projects in an Agile environment, overseeing a team of developers and interns to ensure timely delivery and quality code",
-      "Responsible for end-to-end front-end development, including coding, testing, and debugging, to optimize user experience and system performance.",
-      "Spearheaded team coordination and project planning, implementing best practices to maintain high-quality standards and effective communication within the team.",
+      "Led front-end projects in Agile settings, guiding developers and interns for timely, quality deliveries.",
+      "Handled full-scope front-end work from coding to debugging, enhancing user experience and system efficiency.",
+      "Drove team coordination and project planning, ensuring high-quality standards and effective internal communication.",
     ],
   },
   {
-    title:
-      "Freelance Full Stack Web Developer at Glazed & Confused Mini Donuts Food Truck Company",
+    title: "Full Stack Web Developer",
+    company: " Glazed & Confused Mini Donuts Food Truck",
+    type: "Freelance",
+    icon: "/freelancer.png",
     date: { start: "April 2023", end: "November 2023" },
     description: [
       "Designed, developed, and launched a full-stack website for Glazed & Confused Mini Donuts Food Truck Company, enhancing online presence and customer engagement.",
@@ -193,7 +198,10 @@ export const experinceObject = [
     ],
   },
   {
-    title: "Data",
+    title: "Data Management Consultant",
+    company: "Integrated Behavioral Health Research Institute",
+    type: "Freelance",
+    icon: "/freelancer.png",
     date: { start: "October 2023", end: "Present" },
     description: [
       "Lead and manage multiple front-end development projects in an Agile environment, overseeing a team of developers and interns to ensure timely delivery and quality code",
