@@ -20,7 +20,7 @@ function Skills(animatedProps: { animated: boolean }) {
   }, []);
 
   return (
-    <section id="skills" className="parallax-container w-full h-[100vh] ">
+    <section id="skills" className="parallax-container py-32 w-full h-[100vh] ">
       <div className="parallax-image "></div>
       <div className="h-full w-full  ">
         <div
@@ -38,7 +38,7 @@ export default Skills;
 
 const SkillsTile = ({ skills, animated }: any) => {
   return (
-    <div className=" bar shadow-gray-700  backdrop-blur-xl bg-white/40 rounded-md px-10 h-full grid grid-cols-1 w-full md:w-[60%]  md:pt-32   md:m-4 justify-center py-32">
+    <div className=" bar shadow-gray-700  backdrop-blur-xl bg-white/40 rounded-md h-full grid grid-cols-1 w-full md:w-[80%] xl:w-[70%] 2xl:w-[60%] justify-center p-10">
       <p className="w-fit pr-2 h-fit bg-white/50 rounded">SKILLS</p>
       {animated &&
         skills.map((skill: any, index: number) => (

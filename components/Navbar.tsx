@@ -62,7 +62,14 @@ const Navbar = () => {
   }, []);
 
   const navitems = (): JSX.Element[] => {
-    const items = ["home", "skills", "projects", "resume", "contact"];
+    const items = [
+      "home",
+      "skills",
+      "experience",
+      "projects",
+      "resume",
+      "contact",
+    ];
     const navItems = items.map((item, index) => (
       <li
         key={index}
@@ -101,7 +108,7 @@ const Navbar = () => {
           <Icon />
         </Link>
         <div className="w-full h-full flex justify-end">
-          <ul className="hidden md:grid grid-cols-5 items-center  justify-center md:w-[80%] 2xl:w-[70%]  h-full">
+          <ul className="hidden md:grid grid-cols-6 items-center  justify-center md:w-[80%] 2xl:w-[70%]  h-full">
             {navitems()}
           </ul>
           {/* Hamburger Icon */}
@@ -159,6 +166,11 @@ const Navbar = () => {
               <Link href="/#skills">
                 <li onClick={() => setNav(false)} className="py-4 text-sm">
                   Skills
+                </li>
+              </Link>
+              <Link href="/#experience">
+                <li onClick={() => setNav(false)} className="py-4 text-sm">
+                  Experience
                 </li>
               </Link>
               <Link href="/#projects">

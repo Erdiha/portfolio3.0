@@ -464,3 +464,181 @@
     content: none;
   }
 }
+
+.cursor-follower-wrapper {
+  position: relative; /* Important for absolute positioning of pseudo-elements */
+  animation: rotateMain 4s linear infinite;
+  box-shadow: 0px -2px 1px 1px white;
+}
+
+.cursor-follower-wrapper::before {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  background-color: transparent;
+  width: 130%;
+  height: 130%;
+  animation: rotateBefore 6s linear infinite;
+  box-shadow: 0px -2px 1px 1px #d93752;
+}
+
+.cursor-follower-wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  background-color: transparent;
+  width: 160%;
+  height: 160%;
+  animation: rotateAfter 8s linear infinite;
+  box-shadow: 0px -2px 1px 1px #d2de32;
+}
+
+@keyframes rotateMain {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg); /* Rotates counter-clockwise */
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateBefore {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: rotateY(-360deg) rotateX(360deg); /* Rotates counter-clockwise on Y and clockwise on X */
+  }
+}
+
+@keyframes rotateAfter {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(-360deg); /* Rotates clockwise on Y and counter-clockwise on X */
+  }
+}
+
+.experience-title {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  right: 0%;
+
+  background-color: #333;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+.experience-title2 {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  left: 0%;
+  background-color: hsl(350, 68%, 53%);
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.class-for-item1 {
+  animation: slideInLeft 1s forwards;
+}
+.class-for-item2 {
+  animation: slideInRight 1s forwards;
+}
+.class-for-item3 {
+  left: 10vw;
+  animation: fadeInTitle 4s forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-900%);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(900%); /* Adjust as needed */
+  }
+}
+
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button-drawer {
+  position: relative !important;
+  clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 99%, 0% 100%);
+}
+
+#experience {
+  overflow-x: hidden;
+}
+.animate-entry {
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.imgGradientExp {
+  background-color: #333; /* Fallback color */
+  background-image: linear-gradient(to bottom, #333, #d93752);
+}
+
+.clippyStyle {
+  clip-path: polygon(0% -1%, 100% 0%, 100% 100%, 50% 95%, 0 100%);
+  background-color: #d93752 !important;
+}
+.indent-text {
+  text-indent: -20px; /* Pulls the first line to the left */
+  padding-left: 20px; /* Indents the whole block, effectively pushing lines (except the first) to the right */
+}
+
+.clippyStyle:before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 15%;
+  bottom: 0%;
+  background-color: #333;
+  box-shadow: 0px 0px 1px 10px white;
+  z-index: -1;
+}

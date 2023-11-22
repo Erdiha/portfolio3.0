@@ -24,7 +24,7 @@ function Hero() {
                 developing.
               </span>
             </div>
-            <div className="text-start mt-40    md:text-2xl border-b-2 border-b-red-600 w-fit max-h-fit">
+            <div className="text-start mt-40  md:mt-10   md:text-2xl border-b-2 border-b-red-600 w-fit max-h-fit">
               <h1 className="font-semibold"> Hi, I am ERDI. </h1>
               <i
                 className={`flex text-sm text-[#ecf0f3]/80 md:text-lg font-light hero-text-animate ${
