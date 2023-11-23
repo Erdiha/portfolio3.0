@@ -31,7 +31,7 @@ const webLayout = ({
         zIndex: "9999",
         width: "100%", // Ensure the parent container allows flexible widths
       }}
-      className="m-1 clippyStyle "
+      className=" clippyStyle "
     >
       <span className="clippyStyle2" />
       <div className="w-full h-[35%] flex flex-col relative bg-[#333]">
@@ -46,7 +46,7 @@ const webLayout = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="w-[50%] self-center absolute bottom-[35%]"
+        className="max-w-[10rem]  self-center absolute bottom-[35%]"
         src={item.icon}
         alt=""
       />
@@ -97,14 +97,15 @@ const webLayout = ({
 const mobileLayout = ({ item, index }: any) => {
   return (
     <section className="w-full h-full justify-center items-center relative p-8 flex">
-      <div className="w-full h-full p-1 flex flex-col bg-[#333] relative">
-        <span className="text-sm text-gray-300 w-full h-full ">
-          {item.company}
-        </span>
-        <span className="text-md tracking-wide font-semibold bg-[#333] p-1 absolute top-[-35px] text-gray-200 left-0 shadow-md shadow-gray-500 w-full">
+      <div className="w-full h-full p-1 flex flex-col bg-[#333] relative justify-between">
+        <span className="text-md tracking-wide font-semibold bg-[#333] pl-1   text-gray-200  shadow-md shadow-gray-500 w-full p-2">
           {item.title}
         </span>
-        <p className="flex gap-4  absolute top-[20%] justify-centers items-center">
+        <span className="text-sm text-gray-300 w-full h-fit pl-1 p-1">
+          {item.company}
+        </span>
+
+        <section className="flex gap-4 w-full h-fit pl-1 p-1 justify-centers items-center">
           <span className="italic font-thin text-gray-300 text-sm">
             {item.type}
           </span>
@@ -112,11 +113,11 @@ const mobileLayout = ({ item, index }: any) => {
           <span className="text-white/40 italic font-extralight text-xs">
             {item.date.start} - {item.date.end}
           </span>
-        </p>
-        <ul className="w-full h-full p-2 top-14 flex-col overflow-y-auto flex  absolute  bg-gray-200  left-0 min-h-[120%] justify-center pt-4">
+        </section>
+        <ul className="w-full h-fit  pl-1 py-3 flex-col  flex bg-gray-200   justify-center gap-2">
           {item.description.map((desc: any, index: number) => (
             <motion.li
-              className="text-gray-600 text-[11px]"
+              className="text-gray-600 text-[12px] w-full h-full"
               key={index}
               style={{ marginBottom: "5px" }}
             >
@@ -131,8 +132,21 @@ const mobileLayout = ({ item, index }: any) => {
 
 const DrawerExperience = React.memo(({ item, index }: any) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const [startAnimation, setStartAnimation] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleResize = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -145,7 +159,6 @@ const DrawerExperience = React.memo(({ item, index }: any) => {
     damping: 10,
   };
 
-  // Adjust the width based on hover state
   const animateProps = inView
     ? {
         opacity: 1,
@@ -155,24 +168,25 @@ const DrawerExperience = React.memo(({ item, index }: any) => {
       }
     : { opacity: 0 };
 
-  // Adjust the sectionVariants as per the requirements
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: transitionSettings },
   };
 
-  return isMobile
-    ? mobileLayout({ item, index })
-    : webLayout({
-        hoveredIndex,
-        item,
-        setHoveredIndex,
-        transitionSettings,
-        animateProps,
-        index,
-        ref,
-        sectionVariants,
-      });
+  return isClient
+    ? isMobile
+      ? mobileLayout({ item, index })
+      : webLayout({
+          hoveredIndex,
+          item,
+          setHoveredIndex,
+          transitionSettings,
+          animateProps,
+          index,
+          ref,
+          sectionVariants,
+        })
+    : null;
 });
 
 export default DrawerExperience;

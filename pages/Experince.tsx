@@ -54,26 +54,29 @@ const Experince = () => {
   return (
     <section
       id="experience"
-      className="w-full h-screen flex min-h-[100vh] justify-center items-center relative z-50"
+      className="w-full md:h-screen flex min-h-screen justify-center items-center relative mt-20 pt-10 z-50   md:pb-0 md:mt-0"
     >
-      <div className="w-full   h-[75%]  md:w-[80%] xl:w-[70%] 2xl:w-[60%] rounded-full">
-        <div className="w-full h-[10%] md:h-1/6 flex border-l-2 border-l-white  justify-center relative  m-8 md:m-4">
-          <span
-            id="item3"
-            className="text-2xl font-bold uppercase tracking-wide  h-full items-center flex bg- observe-item absolute left-0"
-          >
-            Professional Experience
-          </span>
+      <div className="w-full h-[150vh] min-h-100vh pt-10  md:h-[75%]  md:w-[80%] xl:w-[70%] 2xl:w-[60%]  flex flex-col">
+        <div
+          className="h-[5%] md:h-1/6 flex justify-center relative mx-8 md:mx-0
+        md:w-full"
+        >
           <span
             id="item1"
-            className="experience-title flex w-full h-full observe-item"
+            className="experience-title flex w-full h-full observe-item max-w-5"
           />
           <span
             id="item2"
             className="experience-title2 flex w-full h-full observe-item"
           />
+          <span
+            id="item3"
+            className="text-2xl font-bold uppercase tracking-wide  h-full items-center flex bg- observe-item  ml-10 md:ml-0"
+          >
+            Professional Experience
+          </span>
         </div>
-        <div className="w-full h-[90%] md:h-5/6 flex relative md:flex-row flex-col justify-center gap-20 md:gap-5">
+        <div className="w-full h-[90%] md:h-5/6 flex relative md:flex-row flex-col justify-between  gap-5">
           {experinceObject?.map((item, index) => (
             <DrawerExperience item={item} index={index} key={index} />
           ))}
