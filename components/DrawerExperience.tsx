@@ -35,21 +35,14 @@ const webLayout = ({
     >
       <span className="clippyStyle2" />
       <div className="w-full h-[35%] flex flex-col relative bg-[#333]">
-        <motion.p className="text-gray-100 text-start  w-full h-full flex justify-center  items-center text-xl first-letter:">
+        <motion.p className="text-gray-100 text-start  w-full h-full flex justify-center delay-200 items-center text-xl first-letter:">
           {item.title}
         </motion.p>
         <motion.p className=" flex absolute bottom-0 left-2 italic text-white/50 font-light">
           {item.type}
         </motion.p>
       </div>
-      {/* <motion.img
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="max-w-[10rem]  self-center absolute bottom-[35%]"
-        src={item.icon}
-        alt=""
-      /> */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -207,15 +200,15 @@ const DrawerExperience = React.memo(({ item, index }: any) => {
   });
 
   const transitionSettings = {
-    type: "spring",
-    stiffness: 100,
-    damping: 10,
+    type: "tween",
+    duration: 0.5,
+    ease: "easeInOut",
   };
 
   const animateProps = inView
     ? {
         opacity: 1,
-        zIndex: "9999",
+        zIndex: "99999",
         width: hoveredIndex === index ? "80%" : "30%",
         transition: transitionSettings,
       }
