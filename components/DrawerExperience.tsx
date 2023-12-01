@@ -42,14 +42,21 @@ const webLayout = ({
           {item.type}
         </motion.p>
       </div>
-      <motion.img
+      {/* <motion.img
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="max-w-[10rem]  self-center absolute bottom-[35%]"
         src={item.icon}
         alt=""
-      />
+      /> */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="max-w-[15rem] w-full aspect-square  justify-center items-center  rounded-full  self-center absolute bottom-[25%]  "
+      >
+        {borderIcon(index)}
+      </motion.div>
       <motion.section
         initial="hidden"
         animate={hoveredIndex === index ? "visible" : "hidden"}
@@ -127,6 +134,52 @@ const mobileLayout = ({ item, index }: any) => {
         </ul>
       </div>
     </section>
+  );
+};
+
+const borderIcon = (index: number) => {
+  console.log(index);
+  const styles = [
+    {
+      borderTop: "5rem solid red",
+      borderBottom: "none",
+      borderRadius: "200px",
+      animation: "spin 9s linear infinite",
+
+      boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)",
+      background: "linear-gradient(to right, #ff6e7f, #bfe9ff)", // Gradient background
+    },
+    {
+      borderLeft: "4rem solid blue",
+      borderBottom: "none",
+      borderRadius: "200px",
+      animation: "spin 8s linear infinite",
+      //transform: "perspective(500px) rotateX(30deg) rotateY(20deg)",
+      boxShadow: "30px 30px 10px rgba(0, 0, 0, 0.5)",
+      background: "linear-gradient(to bottom, #36d1dc, #5b86e5)", // Gradient background
+    },
+    {
+      borderRight: "3rem solid yellow",
+      borderBottom: "none",
+      borderRadius: "200px",
+      animation: "spin 10s linear infinite",
+      //transform: "perspective(500px) rotateX(30deg) rotateY(20deg)",
+      boxShadow: "60px 60px 10px rgba(0, 0, 0, 0.5)",
+      background: "linear-gradient(to right, #f7971e, #ffd200)", // Gradient background
+    },
+  ];
+
+  const borderStyle = styles[index];
+
+  return (
+    <span
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        ...borderStyle,
+      }}
+    />
   );
 };
 
