@@ -198,7 +198,7 @@ export const experinceObject = [
     ],
   },
   {
-    title: "Software Engineer",
+    title: "Data Management Consultant",
     company: "Integrated Behavioral Health Research Institute",
     type: "Freelance",
     icon: "/freelancer.png",
