@@ -198,14 +198,17 @@ export const experinceObject = [
     ],
   },
   {
-    title: "Data Management Consultant",
+    title: "Software Engineer",
     company: "Integrated Behavioral Health Research Institute",
     type: "Freelance",
     icon: "/freelancer.png",
-    date: { start: "October 2023", end: "Present" },
+    date: {
+      start: "October 2023",
+      end: "Present",
+    },
     description: [
-      "Lead and manage multiple front-end development projects in an Agile environment, overseeing a team of developers and interns to ensure timely delivery and quality code",
-      "Responsible for end-to-end front-end development, including coding, testing, and debugging, to optimize user experience and system performance.",
+      "Used Python and Pandas libraries to clean, handle incomplete or empty data, and analyze the data.",
+      "Utilizing Pandas functionalities like DataFrame manipulation, merging, and time-series analysis to deliver tailored software solutions.",
     ],
   },
 ];
