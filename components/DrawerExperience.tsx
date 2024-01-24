@@ -131,7 +131,6 @@ const mobileLayout = ({ item, index }: any) => {
 };
 
 const borderIcon = (index: number) => {
-  console.log(index);
   const styles = [
     {
       borderTop: "5rem solid red",
