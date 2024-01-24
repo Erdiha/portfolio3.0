@@ -11,7 +11,6 @@ const Card = ({
   bgImage,
   shadowColor,
 }: any) => {
-  console.log(bgImage);
   return (
     <div className="card ">
       <div
