@@ -179,7 +179,7 @@ export const experinceObject = [
     company: "GBCS GRoup",
     type: "Internship",
     icon: "/internship.png",
-    date: { start: "July 2023", end: "Present" },
+    date: { start: "July 2023", end: "January 2024" },
     description: [
       "Led front-end projects in Agile settings, guiding developers and interns for timely, quality deliveries.",
       "Handled full-scope front-end work from coding to debugging, enhancing user experience and system efficiency.",
