@@ -1,18 +1,15 @@
-import { Typography } from "@material-tailwind/react";
-import Image from "next/image";
 import ProjectTile from "../components/ProjectTile";
-import { allProj } from "../utils/data";
 import i6 from "../public/camper2.png";
-import i5 from "../public/myflix2.png";
+import i1 from "../public/glazed&confused2.png";
+import i2 from "../public/letterbee2.png";
 import i3 from "../public/liftbudz2.png";
 import i8 from "../public/schedule2.png";
 import i4 from "../public/thoodies2.png";
 import i7 from "../public/trivia2.png";
-import i2 from "../public/letterbee2.png";
-import i1 from "../public/glazed&confused2.png";
+import { allProj } from "../utils/data";
 
 const Projects = () => {
-  const bgImages = [i1, i2, i3, i4, i5, i6, i7, i8];
+  const bgImages = [i1, i2, i3, i4, i6, i7, i8];
   const randomColors = [
     "#451952",
     "#662549",
