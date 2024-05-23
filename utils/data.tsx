@@ -1,10 +1,9 @@
 import {
-  DiReact,
-  DiJavascript1,
-  DiHtml5,
   DiCss3,
+  DiHtml5,
+  DiJavascript1,
   DiNodejsSmall,
-  DiPython,
+  DiReact,
 } from "react-icons/di";
 
 export interface ICard {
@@ -17,13 +16,13 @@ export interface ICard {
   bgImage: string;
 }
 
+import { SiCplusplus, SiCsharp, SiTypescript } from "react-icons/si";
 import {
   TbBrandNextjs,
-  TbBrandTailwind,
   TbBrandPython,
   TbBrandReactNative,
+  TbBrandTailwind,
 } from "react-icons/tb";
-import { SiTypescript, SiCplusplus, SiCsharp } from "react-icons/si";
 
 const MyObject = {
   name: "C",
@@ -209,6 +208,20 @@ export const experinceObject = [
     description: [
       "Used Python and Pandas libraries to clean, handle incomplete or empty data, and analyze the data.",
       "Utilizing Pandas functionalities like DataFrame manipulation, merging, and time-series analysis to deliver tailored software solutions.",
+    ],
+  },
+  {
+    title: "Web-App Developer",
+    company: "Graph Academy",
+    type: "Internship",
+    icon: "/freelancer.png",
+    date: {
+      start: "May 2023",
+      end: "Present",
+    },
+    description: [
+      "Working with JavaScript/Typescript and modern frameworks/libraries like React.js and Flutter to create dynamic and responsive web interfaces.",
+      "Utilized backend technologies such as Node.js, Express.js, and PostgreSQL (Supabase) for server-side development, including RESTful API design and implementation, to deliver tailored software solutions.",
     ],
   },
 ];

@@ -1,6 +1,5 @@
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { delay, motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 import { useInView } from "react-intersection-observer";
 
 const webLayout = ({
@@ -29,16 +28,16 @@ const webLayout = ({
         color: "white",
         position: "relative",
         zIndex: "9999",
-        width: "100%", // Ensure the parent container allows flexible widths
+        width: "100%",
       }}
-      className=" clippyStyle "
+      className="clippyStyle"
     >
       <span className="clippyStyle2" />
       <div className="w-full h-[35%] flex flex-col relative bg-[#333]">
-        <motion.p className="text-gray-100 text-start  w-full h-full flex justify-center delay-200 items-center text-xl first-letter:">
+        <motion.p className="text-gray-100 text-start w-full h-full flex justify-center delay-200 items-center text-xl p-2">
           {item.title}
         </motion.p>
-        <motion.p className=" flex absolute bottom-0 left-2 italic text-white/50 font-light">
+        <motion.p className="flex absolute bottom-0 left-2 italic text-white/50 font-light">
           {item.type}
         </motion.p>
       </div>
@@ -46,7 +45,7 @@ const webLayout = ({
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="max-w-[15rem] w-full aspect-square  justify-center items-center  rounded-full  self-center absolute bottom-[25%]  "
+        className="max-w-[15rem] w-full aspect-square justify-center items-center rounded-full self-center absolute bottom-[25%]"
       >
         {borderIcon(index)}
       </motion.div>
@@ -61,11 +60,11 @@ const webLayout = ({
           flexDirection: "column",
           justifyContent: "space-evenly",
           alignItems: "center",
-          height: "80%",
+          height: "85%",
           backgroundColor: "#333",
           boxShadow: "inner 0px 0px 10px 10px white",
           bottom: 0,
-          padding: "20px",
+          padding: "10px",
           zIndex: "9999",
         }}
       >
@@ -73,14 +72,14 @@ const webLayout = ({
           <motion.p className="text-start text-2xl text-white w-full text-shadow">
             {item.company}
           </motion.p>
-          <motion.p className="text-start text-gray-300 w-full italic font-thin text-shadow">
+          <motion.p className="text-start text-gray-300 w-full italic font-thin text-shadow ">
             {item.date.start} - {item.date.end}
           </motion.p>
         </section>
         <motion.section
-          className="w-full flex flex-col overflow-y-auto h-[80%] justify-center  indent-text"
+          className="w-full flex flex-col overflow-y-auto h-[80%] justify-center indent-text"
           style={{
-            maxHeight: "calc(100% - 20px)", // Adjust as per your design
+            maxHeight: "calc(100% - 20px)",
           }}
         >
           {item.description.map((desc: any, index: number) => (
@@ -98,14 +97,13 @@ const mobileLayout = ({ item, index }: any) => {
   return (
     <section className="w-full h-full justify-center items-center relative p-8 flex">
       <div className="w-full h-full p-1 flex flex-col bg-[#333] relative justify-between">
-        <span className="text-md tracking-wide font-semibold bg-[#333] pl-1   text-gray-200  shadow-md shadow-gray-500 w-full p-2">
+        <span className="text-md tracking-wide font-semibold bg-[#333] pl-1 text-gray-200 shadow-md shadow-gray-500 w-full p-2">
           {item.title}
         </span>
         <span className="text-sm text-gray-300 w-full h-fit pl-1 p-1">
           {item.company}
         </span>
-
-        <section className="flex gap-4 w-full h-fit pl-1 p-1 justify-centers items-center">
+        <section className="flex gap-4 w-full h-fit pl-1 p-1  items-center">
           <span className="italic font-thin text-gray-300 text-sm">
             {item.type}
           </span>
@@ -114,7 +112,7 @@ const mobileLayout = ({ item, index }: any) => {
             {item.date.start} - {item.date.end}
           </span>
         </section>
-        <ul className="w-full h-fit  pl-1 py-3 flex-col  flex bg-gray-200   justify-center gap-2">
+        <ul className="w-full h-fit pl-1 py-3 flex-col flex bg-gray-200 justify-center gap-2">
           {item.description.map((desc: any, index: number) => (
             <motion.li
               className="text-gray-600 text-[12px] w-full h-full"
@@ -137,31 +135,36 @@ const borderIcon = (index: number) => {
       borderBottom: "none",
       borderRadius: "200px",
       animation: "spin 9s linear infinite",
-
       boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)",
-      background: "linear-gradient(to right, #ff6e7f, #bfe9ff)", // Gradient background
+      background: "linear-gradient(to right, #ff6e7f, #bfe9ff)",
     },
     {
       borderLeft: "4rem solid blue",
       borderBottom: "none",
       borderRadius: "200px",
       animation: "spin 8s linear infinite",
-      //transform: "perspective(500px) rotateX(30deg) rotateY(20deg)",
       boxShadow: "30px 30px 10px rgba(0, 0, 0, 0.5)",
-      background: "linear-gradient(to bottom, #36d1dc, #5b86e5)", // Gradient background
+      background: "linear-gradient(to bottom, #36d1dc, #5b86e5)",
     },
     {
       borderRight: "3rem solid yellow",
       borderBottom: "none",
       borderRadius: "200px",
       animation: "spin 10s linear infinite",
-      //transform: "perspective(500px) rotateX(30deg) rotateY(20deg)",
       boxShadow: "60px 60px 10px rgba(0, 0, 0, 0.5)",
-      background: "linear-gradient(to right, #f7971e, #ffd200)", // Gradient background
+      background: "linear-gradient(to right, #f7971e, #ffd200)",
+    },
+    {
+      borderRight: "3rem solid #74512D",
+      borderBottom: "none",
+      borderRadius: "200px",
+      animation: "spin 15s linear infinite",
+      boxShadow: "60px 60px 10px rgba(0, 0, 0, 0.5)",
+      background: "linear-gradient(to bottom, #028391, #FEAE6F)",
     },
   ];
 
-  const borderStyle = styles[index];
+  const borderStyle = styles[index % styles.length];
 
   return (
     <span
@@ -182,7 +185,7 @@ const DrawerExperience = React.memo(({ item, index }: any) => {
 
   useEffect(() => {
     setIsClient(true);
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
     setIsMobile(mediaQuery.matches);
 
     const handleResize = () => {

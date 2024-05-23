@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import DrawerExperience from "../components/DrawerExperience";
 import { experinceObject } from "../utils/data";
 interface ExperienceItem {
@@ -29,6 +29,9 @@ const Experince = () => {
               case "item3":
                 entry.target.classList.add("class-for-item3");
                 break;
+              case "item4":
+                entry.target.classList.add("class-for-item3");
+                break;
               // Add more cases as needed
             }
           }
@@ -56,7 +59,7 @@ const Experince = () => {
       id="experience"
       className="w-full md:h-screen flex min-h-screen justify-center items-center relative mt-20 pt-10 z-50   md:pb-0 md:mt-0"
     >
-      <div className="w-full h-[150vh] min-h-100vh pt-10  md:h-[75%]  md:w-[80%] xl:w-[70%] 2xl:w-[60%]  flex flex-col">
+      <div className="w-full h-[150vh] min-h-100vh pt-10  md:h-[75%]  md:w-[80%] xl:w-[70%] 2xl:w-[60%]  flex flex-col 4xl:max-w-[90rem] mx-auto">
         <div
           className="h-[5%] md:h-1/6 flex justify-center relative mx-8 md:mx-0
         md:w-full"
@@ -76,7 +79,7 @@ const Experince = () => {
             Professional Experience
           </span>
         </div>
-        <div className="w-full h-[90%] md:h-5/6 flex relative md:flex-row flex-col justify-between  gap-5">
+        <div className="w-full h-[90%]  flex relative lg:flex-row flex-col justify-between  gap-5 lg:gap-1 4xl:max-w-[90rem] mx-auto">
           {experinceObject?.map((item, index) => (
             <DrawerExperience item={item} index={index} key={index} />
           ))}
