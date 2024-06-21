@@ -110,7 +110,7 @@ export const projectNames = [
   "Cya App",
 ];
 export const projectLinks = [
-  "https://minidonutsla.com",
+  "https://gand-c.vercel.app/home",
   "https://www.youtube.com/watch?v=U_5BrEn1fzg",
   "https://lift-budz.vercel.app/",
   "http://thoodies.com/",
