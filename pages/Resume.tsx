@@ -1,13 +1,36 @@
-import { Button } from "@material-tailwind/react";
-import React from "react";
+import { Button } from '@material-tailwind/react';
+import React from 'react';
 
 function Resume() {
   const [view, setView] = React.useState(false);
+  const date = new Date();
+  // const monthNames = [
+  //   'January',
+  //   'February',
+  //   'March',
+  //   'April',
+  //   'May',
+  //   'June',
+  //   'July',
+  //   'August',
+  //   'September',
+  //   'October',
+  //   'November',
+  //   'December',
+  // ];
+
+  // const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  const formattedDate = `08_${year}`;
+  console.log(formattedDate);
+
+  const pdfname = 'EH_resume_' + formattedDate;
   return (
     <section
       id="resume"
       className={`w-full  ${
-        view ? "h-[100vh]" : "h-[20rem]"
+        view ? 'h-[100vh]' : 'h-[20rem]'
       } bg-gray-500 justify-around items-center flex p-10 flex-col md:flex-row scroll-mt-[40vh] align-top `}
     >
       {view ? (
@@ -25,7 +48,7 @@ function Resume() {
         </div>
       ) : (
         <>
-          {" "}
+          {' '}
           <Button
             onClick={() => setView(!view)}
             className="w-fit hover:scale-150 bg-slate-200 text-gray-900 px-3 hidden md:flex"
@@ -42,7 +65,7 @@ function Resume() {
             onResizeCapture={undefined}
           >
             <a
-              download="HaciogullariErdi.pdf"
+              download={pdfname}
               href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
