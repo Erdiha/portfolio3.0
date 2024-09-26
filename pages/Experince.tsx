@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import DrawerExperience from "../components/DrawerExperience";
-import { experinceObject } from "../utils/data";
+import { experienceObject } from "../utils/data";
 interface ExperienceItem {
   // Define properties based on your data structure
   id: number;
@@ -80,7 +80,7 @@ const Experince = () => {
           </span>
         </div>
         <div className="w-full h-[90%]  flex relative lg:flex-row flex-col justify-between  gap-5 lg:gap-1 4xl:max-w-[90rem] mx-auto">
-          {experinceObject?.map((item, index) => (
+          {experienceObject?.map((item, index) => (
             <DrawerExperience item={item} index={index} key={index} />
           ))}
         </div>

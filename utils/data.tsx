@@ -167,13 +167,24 @@ for (let i = 0; i < projectsCode.length; i++) {
   allProj.push(temp);
 }
 
-export const experinceObject = [
+export const experienceObject = [
+  {
+    title: 'Software Engineer',
+    company: 'Graph Academy',
+    type: 'Full Time',
+    icon: '/freelancer.png',
+    date: { start: 'May 2024', end: 'Present' },
+    description: [
+      'Working with JavaScript/Typescript, Dart, and modern frameworks/libraries like React.js and Flutter to create dynamic and responsive web interfaces.',
+      'Utilized backend technologies such as Node.js, Express.js, and PostgreSQL (Supabase) for server-side development, including RESTful API design and implementation, to deliver tailored software solutions.',
+    ],
+  },
   {
     title: 'React Frontend Engineer',
-    company: 'GBCS GRoup',
+    company: 'GBCS Group',
     type: 'Internship',
     icon: '/internship.png',
-    date: { start: 'July 2023', end: 'Present' },
+    date: { start: 'July 2023', end: 'January 2024' },
     description: [
       'Led front-end projects in Agile settings, guiding developers and interns for timely, quality deliveries.',
       'Handled full-scope front-end work from coding to debugging, enhancing user experience and system efficiency.',
@@ -181,42 +192,25 @@ export const experinceObject = [
     ],
   },
   {
-    title: 'Full Stack Web Developer',
-    company: ' Glazed & Confused Mini Donuts Food Truck',
-    type: 'Freelance',
-    icon: '/freelancer.png',
-    date: { start: 'April 2023', end: 'November 2023' },
-    description: [
-      'Designed, developed, and launched a full-stack website for Glazed & Confused Mini Donuts Food Truck Company, enhancing online presence and customer engagement.',
-      'Managed both front-end and back-end development tasks.',
-    ],
-  },
-  {
     title: 'Data Management Consultant',
     company: 'Integrated Behavioral Health Research Institute',
     type: 'Freelance',
     icon: '/freelancer.png',
-    date: {
-      start: 'October 2023',
-      end: 'July 2024',
-    },
+    date: { start: 'October 2023', end: 'July 2024' },
     description: [
       'Used Python and Pandas libraries to clean, handle incomplete or empty data, and analyze the data.',
       'Utilizing Pandas functionalities like DataFrame manipulation, merging, and time-series analysis to deliver tailored software solutions.',
     ],
   },
   {
-    title: 'React Frontend Engineer',
-    company: 'Graph Academy',
-    type: 'Internship',
+    title: 'Full Stack Web Developer',
+    company: 'Glazed & Confused Mini Donuts Food Truck',
+    type: 'Freelance',
     icon: '/freelancer.png',
-    date: {
-      start: 'May 2023',
-      end: 'August 2024',
-    },
+    date: { start: 'April 2023', end: 'November 2023' },
     description: [
-      'Working with JavaScript/Typescript and modern frameworks/libraries like React.js and Flutter to create dynamic and responsive web interfaces.',
-      'Utilized backend technologies such as Node.js, Express.js, and PostgreSQL (Supabase) for server-side development, including RESTful API design and implementation, to deliver tailored software solutions.',
+      'Designed, developed, and launched a full-stack website for Glazed & Confused Mini Donuts Food Truck Company, enhancing online presence and customer engagement.',
+      'Managed both front-end and back-end development tasks.',
     ],
   },
 ];
